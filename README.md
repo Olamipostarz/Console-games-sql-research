@@ -1,3 +1,4 @@
+<img width="1201" height="637" alt="Screenshot 2026-05-20 132542" src="https://github.com/user-attachments/assets/23b2751e-4b8e-470d-a89b-1242866c47f8" />
 
 # Console Games Market Research Analysis
 
