@@ -35,8 +35,8 @@ Data was imported using the MySQL Workbench Table Data Import Wizard.
 * ConsoleGames.csv was mapped to the table ConsoleGames.
 * ConsoleDates.csv was mapped to the table p9-consoledates.
 Note: Data types for date columns were initially imported as text fields to ensure structural safety and then optimized during the ETL processing phase.
-# 🔍 Analytics Tasks & Solutions
-Task 1: North American Market Share
+### 🔍 Analytics Tasks & Solutions
+# Task 1: North American Market Share
 Objective: Calculate what percentage of Global Sales were made in North America.
 ``` sql
 SELECT 
@@ -45,24 +45,21 @@ SELECT
     ROUND((SUM(NA_Sales) / SUM(Global_Sales)) * 100, 2) AS Percentage_NA_Sales
 FROM ConsoleGames;
 ```
-# Task 2:
-Console Titles Ordered by Platform and Year
+# Task 2: Console Titles Ordered by Platform and Year
 Objective: Create a clean database view of console game titles ordered by platform name (Ascending) and Year of release (Descending).
-```
+```sql
 CREATE VIEW Game_Titles_View AS
 SELECT GameTitle, Platform, ReleaseYear
 FROM ConsoleGames
-ORDER BY Platform ASC, ReleaseYear DESC
+ORDER BY Platform ASC, ReleaseYear DESC;
 ```
-# Task 3: 
-Publisher Code Extraction
+# Task 3: Publisher Code Extraction
 Objective: For each game title, extract the first four letters of the publisher's name.
 ``` sql
 SELECT GameTitle, Publisher, LEFT(Publisher, 4) AS Publisher_Code
 FROM ConsoleGames;
 ```
-# Task 4: 
-Seasonal Release Strategy Analysis
+# Task 4: Seasonal Release Strategy Analysis
 Objective: Display all console platforms released either just before Black Friday or just before Christmas (in any year).
 ``` sql
 SELECT Platform, FirstRetailAvailability
@@ -83,7 +80,7 @@ FROM p9-consoledates
 WHERE Discontinued IS NOT NULL
 ORDER BY Days_Active ASC;
 ```
-Task 6: Data Type Modernization (Game_Year)
+# Task 6: Data Type Modernization (Game_Year)
 Objective: Demonstrate how to handle and convert the Game_Year / ReleaseYear column data type permanently
 ``` sql
 -- Dynamic conversion for a quick query
@@ -94,7 +91,7 @@ FROM ConsoleGames;
 ALTER TABLE ConsoleGames 
 MODIFY COLUMN ReleaseYear INT;
 ```
-## 📈 Data Quality & Engineering Recommendations (Task 7)
+# 📈 Data Quality & Engineering Recommendations (Task 7)
 When cleaning missing data within these historical files, the following professional approaches are recommended:
 1.	Handling Missing Numerical Fields (Sales): * Avoid treating missing fields as NULL if they affect mathematical operations. Use COALESCE(Sales, 0) to default missing parameters to 0 or replace them with the median value of the respective console's catalog to prevent skewing sums.
 2.	Handling Missing Categorical Strings (Publisher/Genre):
