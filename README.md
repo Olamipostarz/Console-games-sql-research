@@ -46,9 +46,9 @@ SELECT
     ROUND((SUM(NA_Sales) / SUM(Global_Sales)) * 100, 2) AS Percentage_NA_Sales
 FROM ConsoleGames;
 ```
-### 🔗 Relational Database Integration (Table JOIN)
+#### 🔗 Relational Database Integration (Table JOIN)
 
-### Task 8: Cross-Table Relational Data Analysis
+### Cross-Table Relational Data Analysis
 *Objective:* To demonstrate advanced database normalization and relational mechanics, an INNER JOIN was implemented to connect the sales records from p9-consolegames directly with the hardware life cycles from p9-consoledates using the shared matching key column (Platform). 
 
 Because global sales numbers were split into individual regional columns, they were dynamically aggregated within the selection clause to generate unified business insights.
