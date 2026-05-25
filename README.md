@@ -1,3 +1,5 @@
+
+<img width="1793" height="1004" alt="Screenshot 2026-05-25 175535" src="https://github.com/user-attachments/assets/2092c12b-309d-4b5a-80a0-3bf4bfdbf541" />
 <img width="1201" height="637" alt="Screenshot 2026-05-20 132542" src="https://github.com/user-attachments/assets/23b2751e-4b8e-470d-a89b-1242866c47f8" />
 
 # Console Games Market Research Analysis
@@ -49,7 +51,8 @@ FROM ConsoleGames;
 ### 🔗 Relational Database Integration (Table JOIN)
 
 ### Cross-Table Relational Data Analysis
-*Objective:* To demonstrate advanced database normalization and relational mechanics, an INNER JOIN was implemented to connect the sales records from p9-consolegames directly with the hardware life cycles from p9-consoledates using the shared matching key column (Platform). 
+*Objective:* To demonstrate advanced database normalization and relational mechanics, an INNER JOIN was implemented to connect the sales records from p9-consolegames directly with the hardware life cycles from p9-c<img width="1793" height="1004" alt="Screenshot 2026-05-25 175535" src="https://github.com/user-attachments/assets/7b547d57-07b3-4de9-ba17-d64fd72f5f15" />
+onsoledates using the shared matching key column (Platform). 
 
 Because global sales numbers were split into individual regional columns, they were dynamically aggregated within the selection clause to generate unified business insights.
 
