@@ -46,6 +46,27 @@ SELECT
     ROUND((SUM(NA_Sales) / SUM(Global_Sales)) * 100, 2) AS Percentage_NA_Sales
 FROM ConsoleGames;
 ```
+## 🔗 Relational Database Integration (Table JOIN)
+
+### Task 8: Cross-Table Relational Data Analysis
+*Objective:* To demonstrate advanced database normalization and relational mechanics, an INNER JOIN was implemented to connect the sales records from p9-consolegames directly with the hardware life cycles from p9-consoledates using the shared matching key column (Platform). 
+
+Because global sales numbers were split into individual regional columns, they were dynamically aggregated within the selection clause to generate unified business insights.
+
+```sql
+SELECT 
+    game.Name AS Game_Title, 
+    game.Platform, 
+    game.Genre, 
+    game.Publisher, 
+    -- Dynamically aggregating regional sales to calculate total Global Sales
+    (game.NA_Sales + game.EU_Sales + game.JP_Sales + game.Other_Sales) AS Global_Sales,
+    date.FirstRetailAvailability AS Platform_Launch_Date,
+    date.UnitsSoldMillions AS Total_Console_Units_Sold
+FROM p9-consolegames AS game
+INNER JOIN p9-consoledates AS date 
+    ON game.Platform = date.Platform;
+```
 # Task 2: Console Titles Ordered by Platform and Year
 Objective: Create a clean database view of console game titles ordered by platform name (Ascending) and Year of release (Descending).
 ```sql
