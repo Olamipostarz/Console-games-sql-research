@@ -70,6 +70,7 @@ INNER JOIN p9-consoledates AS date
     ON game.Platform = date.Platform;
 ```
 <img width="1793" height="1004" alt="Screenshot 2026-05-25 175535" src="https://github.com/user-attachments/assets/2092c12b-309d-4b5a-80a0-3bf4bfdbf541" />
+
 # Task 2: Console Titles Ordered by Platform and Year
 Objective: Create a clean database view of console game titles ordered by platform name (Ascending) and Year of release (Descending).
 ```sql
